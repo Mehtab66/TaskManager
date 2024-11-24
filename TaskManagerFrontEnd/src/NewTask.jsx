@@ -77,9 +77,9 @@ export const NewTask = () => {
               required
               className="bg-slate-800 text-white border border-gray-600 p-2 rounded-lg w-full focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-purple-500 transition-all"
             >
-              <option value="Pending">Todo</option>
+              <option value="Pending">Pending</option>
               <option value="In-Progress">In Progress</option>
-              <option value="Completed">Done</option>
+              <option value="Completed">Completed</option>
             </select>
           </div>
           <div>
