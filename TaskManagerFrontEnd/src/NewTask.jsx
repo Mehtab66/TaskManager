@@ -1,7 +1,9 @@
 import React, { useState } from "react";
 import "./NewTask.css";
+import { useNavigate } from "react-router-dom";
 
 export const NewTask = () => {
+  const navigate = useNavigate();
   const [Formdata, setFormdata] = useState({
     title: "",
     description: "",
@@ -26,6 +28,12 @@ export const NewTask = () => {
       if (response.status === 201) {
         alert("Task created successfully");
       }
+      setFormdata({
+        title: "",
+        description: "",
+        status: "Pending",
+      });
+      navigate("/");
     } catch (error) {
       console.log(error);
     }

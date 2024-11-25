@@ -72,7 +72,7 @@ export const MainPage = () => {
           All Tasks
         </h2>
       </div>
-      <div className="overflow-x-auto mt-5 mx-[400px] border border-gray-300 shadow-lg rounded-lg">
+      <div className="overflow-x-auto  mt-5 mx-[400px] border border-gray-300 shadow-lg rounded-lg">
         <table className="table-auto w-full text-left text-sm">
           <thead className="bg-gray-200 text-gray-700 uppercase font-semibold">
             <tr>

@@ -14,6 +14,23 @@ router.get("/", async (req, res) => {
     res.status(500).send("Some error occurred");
   }
 });
+router.get(`/:id`, async (req, res) => {
+  try {
+    const id = req.params.id;
+    console.log("id", id);
+    const task = await Task.findById(id);
+    console.log("into the id find");
+
+    if (!task) {
+      return res.status(404).send("Task not found");
+    }
+    res.json(task);
+    console.log(task);
+  } catch (error) {
+    console.log(error);
+    res.status(500).send("Some error occurred");
+  }
+});
 router.post("/", async (req, res) => {
   try {
     console.log("ider sa to done h");
@@ -38,7 +55,7 @@ router.put("/:id", async (req, res) => {
       new: true,
     });
     if (!updatedTask) return res.status(404).json({ error: "Task not found" });
-    res.json(updatedTask);
+    res.status(200).json(updatedTask);
   } catch (err) {
     res.status(400).json({ error: err.message });
   }
